@@ -47,5 +47,12 @@ public class ParameterTest {
         User vbc = (User) mapper.CheckLoginParam("ybc","123");
 
     }
+    @Test
+    public void AgainCheckLoginParamAgain() throws IOException {
+        SqlSession sqlSessdion = SqlSessionUtils.getSqlSessdion();
+        UserMapper mapper = sqlSessdion.getMapper(UserMapper.class);
+        User vbc = (User) mapper.CheckLoginParam("ybc","123");
+
+    }
 
 }
