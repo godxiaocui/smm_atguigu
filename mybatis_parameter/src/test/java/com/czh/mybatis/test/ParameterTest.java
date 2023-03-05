@@ -30,21 +30,22 @@ public class ParameterTest {
         SqlSession sqlSessdion = SqlSessionUtils.getSqlSessdion();
         UserMapper mapper = sqlSessdion.getMapper(UserMapper.class);
         User user = new User(null, "root", "123456", 38, "f", "132123@qq.com");
-        mapper.insertUser(user);
+        User user1 = new User(null, "ybc", "123", 38, "f", "132123@qq.com");
+        mapper.insertUser(user1);
     }
 
     @Test
     public void CheckLoginParam() throws IOException {
         SqlSession sqlSessdion = SqlSessionUtils.getSqlSessdion();
         UserMapper mapper = sqlSessdion.getMapper(UserMapper.class);
-        User vbc = (User) mapper.CheckLoginParam("ybc","123");
+        User vbc = (User) mapper.CheckLoginParam("root","123456");
         System.out.println(vbc);
     }
     @Test
     public void CheckLoginParamAgain() throws IOException {
         SqlSession sqlSessdion = SqlSessionUtils.getSqlSessdion();
         UserMapper mapper = sqlSessdion.getMapper(UserMapper.class);
-        User vbc = (User) mapper.CheckLoginParam("ybc","123");
+        User vbc = (User) mapper.CheckLoginParam("root","123456");
 
     }
     @Test
@@ -52,7 +53,7 @@ public class ParameterTest {
         SqlSession sqlSessdion = SqlSessionUtils.getSqlSessdion();
         UserMapper mapper = sqlSessdion.getMapper(UserMapper.class);
         User vbc = (User) mapper.CheckLoginParam("ybc","123");
-
+        System.out.println(vbc);
     }
 
 }

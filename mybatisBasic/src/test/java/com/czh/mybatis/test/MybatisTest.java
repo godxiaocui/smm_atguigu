@@ -16,7 +16,7 @@ import java.util.List;
 public class MybatisTest {
     @Test
     public void testInsert() throws IOException {
-        for (int i = 0; i < 10; i++) {
+
             InputStream resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");
             //不需要写jdbc，所以要写一个替代jdbc的对象，获取SqlSessionFactoryBuilder对象
             SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
@@ -34,7 +34,7 @@ public class MybatisTest {
             int j = mapper.insertUser();
             //
             System.out.println(j);
-        }
+
 
 // 修改
 
