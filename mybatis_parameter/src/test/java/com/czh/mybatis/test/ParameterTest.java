@@ -55,5 +55,13 @@ public class ParameterTest {
         User vbc = (User) mapper.CheckLoginParam("ybc","123");
         System.out.println(vbc);
     }
+    @Test
+    public void testInsertUserAndKey() throws IOException {
+        SqlSession sqlSessdion = SqlSessionUtils.getSqlSessdion();
+        UserMapper mapper = sqlSessdion.getMapper(UserMapper.class);
+        User user = new User(null, "qiaofeng", "asda", 56, "m", "3132@qwe");
+        mapper.insertUserAndKey(user);
+        System.out.println(user);
+    }
 
 }

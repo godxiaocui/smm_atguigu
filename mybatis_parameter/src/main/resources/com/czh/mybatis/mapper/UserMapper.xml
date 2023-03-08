@@ -17,5 +17,9 @@
     <select id="CheckLoginParam" resultType="User">
         select * from t_user where username = #{czh} and password= #{ylt}
     </select>
-
+    <!--useGeneratedKeys 是否使用自增的主键
+        insert 是没有返回值的 keyProperty 获取的参数的属性值,将属性值放到参数User的对象上-->
+    <insert id="insertUserAndKey" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user values (null,#{username},#{password},#{age},#{gender},#{eamil})
+    </insert>
 </mapper>
