@@ -3,8 +3,84 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.czh.mybatis.mapper.EmpMapper">
-    <select id="getEmpByid" resultType="Emp">
+    <!--
+    1. select 起别名，resultype是根据pojo里面的字段进行的映射
+    2. 第二种 不要学
+    3。 resultmap进行的映射,id唯一标识，给后面用到result
+map的时候使用。type 处理映射关系的实体类
+    常用的标签
+    id是主键的映射关系
+    result 处理普通字段和实体类的映射关系
+    column 映射关系字段名 ，比如是sql中的字段名
+    property：映射关系实体类中的属性名称
+    4. join表的映射关系,3种方式，
+    第一种及联的方式
+    第二种association
+    第三中分布查询
+是普通字段的映射关系    -->
+    <resultMap id="empResultMapAndDeptOne" type="Emp">
+        <id column="emp_id" property="empId"></id>
+        <result column="emp_name" property="empName"></result>
+        <result column="age" property="age"></result>
+        <result column="gender" property="gender"></result>
+        <result column="dept_id" property="deptId"></result>
+        <result column="dept_id" property="dept.deptId"></result>
+        <result column="dept_name" property="dept.deptName"></result>
+    </resultMap>
+<!--
+    第二种association,处理一对多的关系
+    property 需要映射的属性的属性名称，原来的属性中的属性值
+    javatype 处理的属性类型，需要映射的属性名称
+-->
+    <resultMap id="empResultMapAndDeptTwo" type="Emp">
+        <id column="emp_id" property="empId"></id>
+        <result column="emp_name" property="empName"></result>
+        <result column="age" property="age"></result>
+        <result column="gender" property="gender"></result>
+        <result column="dept_id" property="deptId"></result>
+        <association property="dept" javaType="Dept">
+            <id column="dept_id" property="deptId"></id>
+            <result column="dept_name" property="deptName"></result>
+        </association>
+    </resultMap>
+    <!--
+        第三种分步查询
+    -->
+    <resultMap id="empResultMapByStep" type="Emp">
+        <id column="emp_id" property="empId"></id>
+        <result column="emp_name" property="empName"></result>
+        <result column="age" property="age"></result>
+        <result column="gender" property="gender"></result>
+        <result column="dept_id" property="deptId"></result>
+        <association property="dept"
+            select="com.czh.mybatis.mapper.DeptMapper.getEmpAndDeptByStepTwo"
+            column="dept_id" >
+        </association>
+    </resultMap>
+
+
+
+    <resultMap id="empResultMap" type="Emp">
+        <id column="emp_id" property="empId"></id>
+        <result column="emp_name" property="empName"></result>
+        <result column="age" property="age"></result>
+        <result column="gender" property="gender"></result>
+        <result column="dept_id" property="deptId"></result>
+    </resultMap>
+    <select id="getEmpByid" resultType="Emp" >
         select *
         from t_emp where emp_id=#{empId};
+    </select>
+    <select id="getEmpByidNew" resultMap="empResultMap" >
+        select *
+        from t_emp where emp_id=#{empId};
+    </select>
+    <select id="getEmpAndDept" resultMap="empResultMapAndDeptTwo">
+        select * from t_emp left join t_dept on t_emp.dept_id = t_dept.dept_id
+where t_emp.emp_id=#{empId}
+    </select>
+
+    <select id="getEmpAndDeptByStepOne" resultMap="empResultMapByStep">
+        select * from t_emp where emp_id=#{empId}
     </select>
 </mapper>

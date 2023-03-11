@@ -5,17 +5,31 @@ public class Emp {
     private String empName;
     private Integer age;
     private String gender;
-    private int deptId;
+    private Integer deptId;
+    private Dept dept;
+
+    @Override
+    public String toString() {
+        return "Emp{" +
+                "empId=" + empId +
+                ", empName='" + empName + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", deptId=" + deptId +
+                ", dept=" + dept +
+                '}';
+    }
 
     public Emp() {
     }
 
-    public Emp(Integer empId, String empName, Integer age, String gender, int dptId) {
+    public Emp(Integer empId, String empName, Integer age, String gender, int deptId, Dept dept) {
         this.empId = empId;
         this.empName = empName;
         this.age = age;
         this.gender = gender;
-        this.deptId = dptId;
+        this.deptId = deptId;
+        this.dept = dept;
     }
 
     public Integer getEmpId() {
@@ -34,17 +48,6 @@ public class Emp {
         this.empName = empName;
     }
 
-    @Override
-    public String toString() {
-        return "Emp{" +
-                "empId=" + empId +
-                ", empName='" + empName + '\'' +
-                ", age=" + age +
-                ", gender='" + gender + '\'' +
-                ", deptId=" + deptId +
-                '}';
-    }
-
     public Integer getAge() {
         return age;
     }
@@ -61,11 +64,19 @@ public class Emp {
         this.gender = gender;
     }
 
-    public int getDptId() {
+    public int getDeptId() {
         return deptId;
     }
 
-    public void setDptId(int dptId) {
-        this.deptId = dptId;
+    public void setDeptId(int deptId) {
+        this.deptId = deptId;
+    }
+
+    public Dept getDept() {
+        return dept;
+    }
+
+    public void setDept(Dept dept) {
+        this.dept = dept;
     }
 }

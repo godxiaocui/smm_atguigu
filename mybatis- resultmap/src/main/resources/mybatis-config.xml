@@ -73,7 +73,7 @@ ctrl+shift+/快捷注释
     </environments>
 
     <mappers>
-        <mapper resource="com/czh/mybatis/mapper/EmpMapper.xml"/>
+        <package name="com.czh.mybatis.mapper"/>
         <!--
         以包为单位引入映射文件
         要求：
