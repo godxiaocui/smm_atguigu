@@ -6,8 +6,38 @@
     <resultMap id="resultDept" type="Dept">
         <id column="dept_id" property="deptId"></id>
         <result column="dept_name" property="deptName"></result>
+
+    </resultMap>
+    <resultMap id="deptAndEmpResultMap" type="Dept">
+        <id column="dept_id" property="deptId"></id>
+        <result column="dept_name" property="deptName"></result>
+        <!--多对一要用collection标签-->
+        <collection property="emp"  ofType="Emp">
+            <id column="emp_id" property="empId"></id>
+            <result column="emp_name" property="empName"></result>
+            <result column="age" property="age"></result>
+            <result column="gender" property="gender"></result>
+            <result column="dept_id" property="deptId"></result>
+        </collection>
+    </resultMap>
+    <resultMap id="deptAndEmpByStepResultMap" type="Dept">
+        <id column="dept_id" property="deptId"></id>
+        <result column="dept_name" property="deptName"></result>
+        <collection property="emp"
+                    select="com.czh.mybatis.mapper.EmpMapper.getDeptAndEmpByStepTwo"
+                    column="dept_id">
+        </collection>
     </resultMap>
     <select id="getEmpAndDeptByStepTwo" resultMap="resultDept">
         select * from  t_dept where  dept_id=#{deptid}
+    </select>
+
+    <select id="getDeptAndEmp" resultMap="deptAndEmpResultMap">
+        select * from t_dept left join t_emp on t_emp.dept_id = t_dept.dept_id
+        where t_emp.emp_id=#{deptId}
+    </select>
+    <!--分步查询的第一个步骤-->
+    <select id="getDeptAndEmpByStepOne" resultMap="deptAndEmpByStepResultMap">
+        select * from t_dept where dept_id=#{deptId}
     </select>
 </mapper>

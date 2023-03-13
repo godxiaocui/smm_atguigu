@@ -15,6 +15,12 @@ plugins?,environments?,databaseIdProvider?,mappers?
 -->
     <!--引入properties文件-->
     <properties resource="jdbc.properties"/>
+    <settings>
+        <!--开启延迟加载-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!--按需加载-->
+        <setting name="aggressiveLazyLoading" value=""/>
+    </settings>
     <typeAliases>
         <!--
         typeAlias：设置某个类型的别名

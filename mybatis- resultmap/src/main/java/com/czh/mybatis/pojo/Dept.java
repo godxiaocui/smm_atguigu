@@ -1,15 +1,13 @@
 package com.czh.mybatis.pojo;
 
+import java.util.List;
+
 public class Dept {
     private Integer deptId;
     private String deptName;
+    private List<Emp> emp;
 
     public Dept() {
-    }
-
-    public Dept(Integer deptId, String deptName) {
-        this.deptId = deptId;
-        this.deptName = deptName;
     }
 
     @Override
@@ -17,6 +15,7 @@ public class Dept {
         return "Dept{" +
                 "deptId=" + deptId +
                 ", deptName='" + deptName + '\'' +
+                ", emp=" + emp +
                 '}';
     }
 
@@ -34,6 +33,20 @@ public class Dept {
 
     public void setDeptName(String deptName) {
         this.deptName = deptName;
+    }
+
+    public List<Emp> getEmp() {
+        return emp;
+    }
+
+    public void setEmp(List<Emp> emp) {
+        this.emp = emp;
+    }
+
+    public Dept(Integer deptId, String deptName, List<Emp> emp) {
+        this.deptId = deptId;
+        this.deptName = deptName;
+        this.emp = emp;
     }
 }
 

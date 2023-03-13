@@ -83,4 +83,8 @@ where t_emp.emp_id=#{empId}
     <select id="getEmpAndDeptByStepOne" resultMap="empResultMapByStep">
         select * from t_emp where emp_id=#{empId}
     </select>
+
+    <select id="getDeptAndEmpByStepTwo" resultMap="empResultMap">
+        select * from t_emp where dept_id=#{deptId}
+    </select>
 </mapper>

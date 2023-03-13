@@ -16,4 +16,5 @@ public interface EmpMapper {
      * 在查第二个数据
      * */
     List<Emp> getEmpAndDeptByStepOne(@Param("empId") Integer id);
+    List<Emp> getDeptAndEmpByStepTwo(@Param("deptId") Integer deptId);
 }
