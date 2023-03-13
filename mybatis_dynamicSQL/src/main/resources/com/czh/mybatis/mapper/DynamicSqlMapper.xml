@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.czh.mybatis.mapper.DynamicSqlMapper">
+    <resultMap id="empResultMap" type="Emp">
+    <id column="emp_id" property="empId"></id>
+    <result column="emp_name" property="empName"></result>
+    <result column="age" property="age"></result>
+    <result column="gender" property="gender"></result>
+    <result column="dept_id" property="deptId"></result>
+    </resultMap>
+    <!--
+    动态sql
+    List<Emp> getEmpByCondition(Emp Emp);-->
+    <!--where标签使用
+    1. 配合if使用
+    1.1 只会去掉条件中的and
+    2。 比写1=1简单-->
+    <select id="getEmpByCondition" resultMap="empResultMap">
+        select * from t_emp
+<where>
+    <if test="empName != null and empName != ''">
+        and emp_name=#{empName}
+    </if>
+    <if test="age != null and age != ''">
+        and age=#{age}
+    </if>
+    <if test="gender != null and gender != ''">
+        and gender=#{gender}
+    </if>
+</where>
+    </select>
+    <select id="getEmpByConditionOne" resultMap="empResultMap">
+        select * from t_emp where 1=1
+        <if test="empName != null and empName != ''">
+           and emp_name=#{empName}
+        </if>
+        <if test="age != null and age != ''">
+            and age=#{age}
+        </if>
+        <if test="gender != null and gender != ''">
+            and gender=#{gender}
+        </if>
+    </select>
+
+</mapper>
