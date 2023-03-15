@@ -13,9 +13,24 @@
     <!--
     动态sql
     List<Emp> getEmpByCondition(Emp Emp);-->
-    <!--where标签使用-->
+    <!--where标签使用
+    1. 配合if使用
+    1.1 只会去掉条件中的and
+    2。 比写1=1简单
+    foreach标签
+    collection 标签要循环的数据组或者集合
+    item 表示 数组中每一个数据
+    separator 分隔符
+
+    -->
+    <!--
+    sql 片段标签
+    -->
+    <sql id="empcolumns">
+        emp_id,emp_name,age,gender,dept_id
+    </sql>
     <select id="getEmpByCondition" resultMap="empResultMap">
-        select * from t_emp
+        select <include refid="empcolumns"> </include>from t_emp
 <where>
     <if test="empName != null and empName != ''">
         and emp_name=#{empName}
@@ -40,5 +55,27 @@
             and gender=#{gender}
         </if>
     </select>
+    <!--void insertMoreEmp(List<Emp> emp);用了param注解，不用的话就是list-->
+    <!--
+    批量添加
+    -->
+    <insert id="insertMoreEmp">
+        insert into t_emp values
+        <foreach collection="emps" item="emp" separator=",">
+            (null,#{emp.empName},#{emp.age},#{emp.gender},#{emp.deptId})
+        </foreach>
+    </insert>
+
+    <!-- void deleteMoreEmp(@Param("empIds") Integer[] empIds);-->
+    <!--
+    批量删除
+    -->
+    <insert id="deleteMoreEmp">
+        delete from t_emp where emp_id in
+        (
+        <foreach collection="empIds" item="empId" separator=",">
+            #{empId}
+        </foreach>)
+    </insert>
 
 </mapper>
