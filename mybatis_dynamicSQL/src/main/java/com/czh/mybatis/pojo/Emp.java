@@ -6,7 +6,7 @@ public class Emp {
     private Integer age;
     private String gender;
     private Integer deptId;
-    private Dept dept;
+
 
     @Override
     public String toString() {
@@ -16,7 +16,6 @@ public class Emp {
                 ", age=" + age +
                 ", gender='" + gender + '\'' +
                 ", deptId=" + deptId +
-                ", dept=" + dept +
                 '}';
     }
 
@@ -29,7 +28,7 @@ public class Emp {
         this.age = age;
         this.gender = gender;
         this.deptId = deptId;
-        this.dept = dept;
+
     }
 
     public Integer getEmpId() {
@@ -72,11 +71,5 @@ public class Emp {
         this.deptId = deptId;
     }
 
-    public Dept getDept() {
-        return dept;
-    }
 
-    public void setDept(Dept dept) {
-        this.dept = dept;
-    }
 }
