@@ -13,6 +13,7 @@
                         connectionURL="jdbc:mysql://localhost:3306/ssm? serverTimezone=UTC"
                         userId="root"
                         password="czh66221183">
+            <property name="nullCatalogMeansCurrent" value="true"/>
         </jdbcConnection>
         <!-- javaBean的生成策略-->
         <javaModelGenerator targetPackage="com.czh.mybatis.pojo"

@@ -27,6 +27,11 @@ plugins?,environments?,databaseIdProvider?,mappers?
         <!--以包为单位，将包下所有的类型设置默认的类型别名，即类名且不区分大小写-->
         <package name="com.czh.mybatis.pojo"/>
     </typeAliases>
+    <plugins>
+        <!--设置分页插件-->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+
+        </plugin> </plugins>
 
     <environments default="development">
         <!--
