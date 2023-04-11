@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+<bean id ="studentOne"  class="com.czh.ssm.spring.pojo.Student">
+    <!-- property标签：通过组件类的setXxx()方法给组件对象设置属性 -->
+    <!-- name属性：指定属性名（这个属性名是getXxx()、setXxx()方法定义的，和成员变量无关）-->
+    <!-- value属性：指定属性值 -->
+    <property name="sid" value="1001"></property>
+    <property name="sname" value="张三"></property>
+    <property name="age" value="1123"></property>
+    <property name="gender" value="男"></property>
+
+</bean>
+    <bean id="studentTwo" class="com.czh.ssm.spring.pojo.Student">
+        <constructor-arg value="1002"></constructor-arg>
+        <constructor-arg value="李四"></constructor-arg>
+        <constructor-arg value="33" ></constructor-arg>
+        <constructor-arg value="女" ></constructor-arg>
+    </bean>
+    <bean id ="studentThree"  class="com.czh.ssm.spring.pojo.Student">
+        <!-- 解决方案二：使用CDATA节 -->
+        <!-- CDATA中的C代表Character，是文本、字符的含义，CDATA就表示纯文本数据 -->
+        <!-- XML解析器看到CDATA节就知道这里是纯文本，就不会当作XML标签或属性来解析 -->
+        <!-- 所以CDATA节中写什么符号都随意 <![CDATA[  ]]>-->
+        <property name="sid" >
+            <null />
+        </property>
+        <property name="sname">
+            <value><![CDATA[%as as %]]></value>
+        </property>
+        <property name="age" value="1123"></property>
+        <property name="gender" value="男"></property>
+        <property name="clazz" ref="clazz"></property>
+        <!-- 数组赋值-->
+        <property name="hobby">
+            <array>
+                <value>basketball</value>
+                <value>football</value>
+                <value>baseball</value>
+            </array>
+        </property>
+        <property name="teachers">
+            <map>
+                <entry key="10086" value-ref="teacherOne"></entry>
+                <entry key="10086" value-ref="teacherTwo"></entry>
+            </map>
+        </property>
+    </bean>
+    <bean name="clazz" class="com.czh.ssm.spring.pojo.Clazz">
+        <property name="cid" value="1111"></property>
+        <property name="cname" value="级"></property>
+        <property name="students" ref="studenList"></property>
+<!--        <property name="students">-->
+<!--            &lt;!&ndash;列表&ndash;&gt;-->
+<!--            <list>-->
+<!--                <ref bean="studentTwo"></ref>-->
+<!--                <ref bean="studentOne"></ref>-->
+<!--            </list>-->
+<!--        </property>-->
+    </bean>
+    <bean id="teacherOne" class="com.czh.ssm.spring.pojo.Teacher">
+        <property name="teacherId" value="10010"></property>
+        <property name="teacherName" value="大宝"></property>
+    </bean>
+    <bean id="teacherTwo" class="com.czh.ssm.spring.pojo.Teacher">
+        <property name="teacherId" value="10086"></property>
+        <property name="teacherName" value="二宝"></property>
+    </bean>
+
+    <!-- 配置一个util约束-->
+  <util:list id="studenList">
+      <ref bean="studentTwo"></ref>
+      <ref bean="studentOne"></ref>
+  </util:list>
+</beans>
