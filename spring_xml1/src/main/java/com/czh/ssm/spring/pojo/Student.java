@@ -2,6 +2,9 @@ package com.czh.ssm.spring.pojo;
 
 import java.util.Arrays;
 import java.util.Map;
+/**
+ * @author cuizhiheng
+ */
 
 public class Student {
     private Integer sid;

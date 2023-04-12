@@ -40,12 +40,13 @@
                 <value>baseball</value>
             </array>
         </property>
-        <property name="teachers">
-            <map>
-                <entry key="10086" value-ref="teacherOne"></entry>
-                <entry key="10086" value-ref="teacherTwo"></entry>
-            </map>
-        </property>
+        <property name="teachers" ref="teacherMap"></property>
+<!--        <property name="teachers">-->
+<!--            <map>-->
+<!--                <entry key="10086" value-ref="teacherOne"></entry>-->
+<!--                <entry key="10010" value-ref="teacherTwo"></entry>-->
+<!--            </map>-->
+<!--        </property>-->
     </bean>
     <bean name="clazz" class="com.czh.ssm.spring.pojo.Clazz">
         <property name="cid" value="1111"></property>
@@ -73,4 +74,9 @@
       <ref bean="studentTwo"></ref>
       <ref bean="studentOne"></ref>
   </util:list>
+
+    <util:map id="teacherMap">
+        <entry key="10086" value-ref="teacherOne"></entry>
+        <entry key="10010" value-ref="teacherTwo"></entry>
+    </util:map>
 </beans>
