@@ -7,16 +7,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mybatis- resultmap" />
+        <module name="spring-proxy" />
+        <module name="myatis_mbg" />
+        <module name="mybatis_parameter (1)" />
+        <module name="mybatis_parameter (2)" />
         <module name="mybatis_dynamicSQL (1)" />
         <module name="mybatis_dynamicSQL (2)" />
         <module name="mybatis_parameter" />
         <module name="spring_xml1" />
-        <module name="myatis_mbg" />
+        <module name="sping-aop" />
         <module name="mybatis_dynamicSQL" />
         <module name="sping_ioc_annotation" />
         <module name="mybatis_cache" />
-        <module name="mybatis_parameter (1)" />
-        <module name="mybatis_parameter (2)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />

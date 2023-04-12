@@ -28,6 +28,8 @@ public class AnnotationTest {
      * 以上都不行的话
      *  使用@Qualifier注解：根据@Qualifier注解中指定的名称作为bean的id进行匹配
      *
+     * 默认@Qualifier 会有一个requried是true ，可以在自动装配的吧这个设置为false。
+     * 如果设置为false代表这个属性可以不参与自动装配
      */
 
 

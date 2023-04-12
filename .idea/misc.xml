@@ -12,6 +12,8 @@
         <option value="$PROJECT_DIR$/myatis_mbg/pom.xml" />
         <option value="$PROJECT_DIR$/spring_xml1/pom.xml" />
         <option value="$PROJECT_DIR$/sping_ioc_annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-proxy/pom.xml" />
+        <option value="$PROJECT_DIR$/sping-aop/pom.xml" />
       </list>
     </option>
   </component>
