@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/mybatis_cache/pom.xml" />
         <option value="$PROJECT_DIR$/myatis_mbg/pom.xml" />
         <option value="$PROJECT_DIR$/spring_xml1/pom.xml" />
+        <option value="$PROJECT_DIR$/sping_ioc_annotation/pom.xml" />
       </list>
     </option>
   </component>

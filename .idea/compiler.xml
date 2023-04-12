@@ -13,6 +13,7 @@
         <module name="spring_xml1" />
         <module name="myatis_mbg" />
         <module name="mybatis_dynamicSQL" />
+        <module name="sping_ioc_annotation" />
         <module name="mybatis_cache" />
         <module name="mybatis_parameter (1)" />
         <module name="mybatis_parameter (2)" />
