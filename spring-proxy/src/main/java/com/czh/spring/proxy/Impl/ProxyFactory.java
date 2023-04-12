@@ -25,10 +25,18 @@ public class ProxyFactory {
         InvocationHandler invocationHandler = new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                System.out.println("日志" +method.getName()+"参数"+ Arrays.toString(args));
-                // proxy表示代理的对象，method 代理对象的方法 args参数列表
-                Object invoke = method.invoke(target, args);
-                System.out.println("日志" +method.getName()+"参数"+ Arrays.toString(args));
+                Object invoke=null;
+                try{
+                    System.out.println("日志" +method.getName()+"参数"+ Arrays.toString(args));
+                    // proxy表示代理的对象，method 代理对象的方法 args参数列表
+                    invoke = method.invoke(target, args);
+                    System.out.println("日志" +method.getName()+"参数"+ Arrays.toString(args));
+                }catch (Exception e){
+                    e.printStackTrace();
+                }finally {
+                    System.out.println("方法执行完毕");
+                }
+
                 return invoke;
             }
         };

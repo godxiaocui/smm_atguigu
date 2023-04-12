@@ -19,6 +19,7 @@ public class CalculatorProxy {
 //        CalculatorStaticProxy calculatorStaticProxy = new CalculatorStaticProxy(calculator);
 //        calculatorStaticProxy.add(1,2);
         ProxyFactory proxyFactory = new ProxyFactory(new CalculatorImpl());
+        System.out.println();
         Calculator proxy = (Calculator)proxyFactory.getProxy();
         proxy.add(1,2);
 
