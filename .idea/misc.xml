@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_demo" />
     <file type="web" url="file://$PROJECT_DIR$/springmvc_helloworld" />
   </component>
   <component name="MavenProjectsManager">
@@ -19,6 +20,7 @@
         <option value="$PROJECT_DIR$/sping-aop/pom.xml" />
         <option value="$PROJECT_DIR$/spring-helloworld/pom.xml" />
         <option value="$PROJECT_DIR$/springmvc_helloworld/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_demo/pom.xml" />
       </list>
     </option>
   </component>

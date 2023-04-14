@@ -16,6 +16,7 @@
         <module name="mybatis_dynamicSQL (1)" />
         <module name="mybatis_dynamicSQL (2)" />
         <module name="mybatis_parameter" />
+        <module name="springmvc_demo" />
         <module name="spring_xml1" />
         <module name="sping-aop" />
         <module name="mybatis_dynamicSQL" />
