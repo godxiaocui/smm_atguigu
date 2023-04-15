@@ -1,5 +1,6 @@
 package com.czh.ssm.spring.springmvc.controller;
 
+import com.czh.ssm.spring.pojo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,4 +42,5 @@ public class TestRequestMappingController {
         System.out.println("username"+username);
         return "success";
     }
+
 }
