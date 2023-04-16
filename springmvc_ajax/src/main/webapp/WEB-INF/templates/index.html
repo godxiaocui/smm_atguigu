@@ -12,8 +12,12 @@
     <input type="button" value="测试ajax" @click="testAjax()"><br>
     <input type="button" value="使用@RequestBody注解处理json格式的请求参数" @click="testRequestBody()">
     <a th:href="@{/test/RequestBody}">测试requestBody注解响应浏览器数据</a><br>
-    <input type="button" value="使用requestBody注解响应json数据" @click="testResponseBody()">
-
+    <input type="button" value="使用requestBody注解响应json数据" @click="testResponseBody()"><br>
+    <a th:href="@{/test/download}">下载图片</a><br>
+    <form th:action="@{/test/upload}" method="post" enctype="multipart/form-data">
+        头像：<input type="file" name="photo"><br>
+        <input type="submit" value="upload">
+    </form>
     </div>
 <script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
 <script type="text/javascript" th:src="@{/static/js/axios.min.js}"></script>
