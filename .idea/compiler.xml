@@ -23,6 +23,7 @@
         <module name="mybatis_dynamicSQL" />
         <module name="sping_ioc_annotation" />
         <module name="mybatis_cache" />
+        <module name="springmvc_ajax" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
