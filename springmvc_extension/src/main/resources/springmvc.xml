@@ -26,6 +26,8 @@
             </bean>
         </property>
     </bean>
+    <mvc:default-servlet-handler/>
+    <!--必须通过文件解析器的解析才能将文件转换为MultipartFile对象-->
     <!-- 开启mvc的注解驱动-->
     <mvc:annotation-driven></mvc:annotation-driven>
     <!-- 视图控制器;位置当前请求的直接设置视图名称实现页面跳转，有个弊端就是只会操作path=/的请求
@@ -40,8 +42,7 @@
         若只设置该标签，则只能访问静态资源，其他请求则无法访问
         此时必须设置<mvc:annotation-driven/>解决问题
     -->
-    <mvc:default-servlet-handler/>
-    <!--必须通过文件解析器的解析才能将文件转换为MultipartFile对象-->
+
     <bean id="multipartResolver"
           class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
     </bean>

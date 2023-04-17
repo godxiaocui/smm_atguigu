@@ -10,6 +10,7 @@
         <module name="spring-proxy" />
         <module name="spring-helloworld" />
         <module name="springmvc_helloworld" />
+        <module name="springmvc_annotation" />
         <module name="myatis_mbg" />
         <module name="mybatis_parameter (1)" />
         <module name="mybatis_parameter (2)" />

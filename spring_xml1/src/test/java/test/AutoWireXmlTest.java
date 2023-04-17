@@ -1,6 +1,6 @@
 package test;
 
-import com.czh.ssm.spring.Controller.UserController;
+import com.czh.ssm.spring.controller.UserController;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

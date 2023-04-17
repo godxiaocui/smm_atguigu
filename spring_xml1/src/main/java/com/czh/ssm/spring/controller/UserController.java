@@ -1,4 +1,4 @@
-package com.czh.ssm.spring.Controller;
+package com.czh.ssm.spring.controller;
 
 import com.czh.ssm.spring.Service.UserService;
 
