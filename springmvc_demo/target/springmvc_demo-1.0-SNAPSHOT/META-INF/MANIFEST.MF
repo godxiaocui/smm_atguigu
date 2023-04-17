@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
+<<<<<<< HEAD
 Built-By: zh.cui
 Build-Jdk: 1.8.0_302
+=======
+Built-By: cuizhiheng
+Build-Jdk: Oracle OpenJDK version 1.8.0_361
+>>>>>>> d3ffe023406a52cfb3fb2897a5dbf117d4c7075c
 

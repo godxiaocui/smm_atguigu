@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>add employee</title>
+    <link rel="stylesheet" th:href="@{/static/css/index_work.css}">
+    <script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
+</head>
+<body>
+<form th:action="@{/employee}" method="post">
+<table>
+    <tr>
+        <th colspan="2">add employee</th>
+    </tr>
+    <tr>
+        <td>lastname
+        </td>
+        <td>
+            <input type="text" name="lastName">
+        </td>
+    </tr>
+    <tr>
+        <td>email
+        </td>
+        <td>
+            <input type="text" name="email">
+        </td>
+    </tr>
+    <tr>
+        <td>gender
+        </td>
+        <td>
+            <input type="radio"  name="gender" value="1">m
+            <input type="radio"  name="gender" value="0">f
+
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+        <input type="submit" value="add">
+    </tr>
+
+</table>
+
+</form>
+
+</body>
+</html>

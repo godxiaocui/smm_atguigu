@@ -13,6 +13,7 @@
         <module name="myatis_mbg" />
         <module name="mybatis_parameter (1)" />
         <module name="mybatis_parameter (2)" />
+        <module name="springmvc_rest" />
         <module name="mybatis_dynamicSQL (1)" />
         <module name="mybatis_dynamicSQL (2)" />
         <module name="mybatis_parameter" />
@@ -22,6 +23,7 @@
         <module name="mybatis_dynamicSQL" />
         <module name="sping_ioc_annotation" />
         <module name="mybatis_cache" />
+        <module name="springmvc_ajax" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />

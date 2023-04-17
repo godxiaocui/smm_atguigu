@@ -6,6 +6,26 @@
 </head>
 <body>
 <h1>index.html</h1>
+<<<<<<< HEAD
 <a th:href="@{test/abc}">测试@RequestMapping标识的位置</a>
+=======
+<a th:href="@{/test/abc}">测试@RequestMapping标识的位置</a><br>
+<a th:href="@{/test/rest/czh/1}">测试@RequestMapping value属性值的占位符</a><br>
+<hr>
+<form th:action="@{/param/pojo}" method="post">
+  用户名 :<input type="text" name="username"><br>
+  密码 :<input type="text" name="password"><br>
+  <input type="submit" value="登陆"><br>
+</form>
+<hr>
+<a th:href="@{/modelandview/mav}">测试ModelAndView 像请求域中共享数据</a><br>
+<a th:href="@{/modelandview/model}">测试Model 像请求域中共享数据</a><br>
+<a th:href="@{/modelandview/modelMap}">测试modelMap 像请求域中共享数据</a><br>
+<a th:href="@{/modelandview/Map}">测试Map像请求域中共享数据</a><br>
+<a th:href="@{/test/session}">测试session回话共享数据</a><br>
+<a th:href="@{/test/application}">测试应用共享数据</a><br>
+<hr>
+<a th:href="@{/test/view/thymeleaf}">测试springmvc的视图ThymeleafView</a><br>
+>>>>>>> d3ffe023406a52cfb3fb2897a5dbf117d4c7075c
 </body>
 </html>
