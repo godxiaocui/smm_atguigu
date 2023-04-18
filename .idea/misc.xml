@@ -7,6 +7,7 @@
     <file type="web" url="file://$PROJECT_DIR$/springmvc_demo" />
     <file type="web" url="file://$PROJECT_DIR$/springmvc_extension" />
     <file type="web" url="file://$PROJECT_DIR$/springmvc_helloworld" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_listener" />
     <file type="web" url="file://$PROJECT_DIR$/springmvc_rest" />
   </component>
   <component name="MavenProjectsManager">
@@ -29,6 +30,7 @@
         <option value="$PROJECT_DIR$/springmvc_ajax/pom.xml" />
         <option value="$PROJECT_DIR$/springmvc_extension/pom.xml" />
         <option value="$PROJECT_DIR$/springmvc_annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_listener/pom.xml" />
       </list>
     </option>
   </component>

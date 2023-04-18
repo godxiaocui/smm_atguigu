@@ -19,5 +19,7 @@
     <file url="file://$PROJECT_DIR$/springmvc_extension/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springmvc_helloworld/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springmvc_helloworld/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_listener/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_listener/src/main/resources" charset="UTF-8" />
   </component>
 </project>

@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mybatis- resultmap" />
         <module name="spring-proxy" />
+        <module name="springmvc_listener" />
         <module name="spring-helloworld" />
         <module name="springmvc_helloworld" />
         <module name="springmvc_annotation" />
