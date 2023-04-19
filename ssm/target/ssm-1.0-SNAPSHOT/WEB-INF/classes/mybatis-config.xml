@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--
+        属性：default默认的环境
+        环境可以用多个
+    -->
+    <!--
+MyBatis核心配置文件中，标签的顺序：
+properties?,settings?,typeAliases?,typeHandlers?,
+objectFactory?,objectWrapperFactory?,reflectorFactory?,
+plugins?,environments?,databaseIdProvider?,mappers?
+-->
+    <!--引入properties文件-->
+
+
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+
+
+</configuration>
