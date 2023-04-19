@@ -18,7 +18,7 @@
     <th>email</th>
     <th>options</th>
   </tr>
-  <tr th:each="employee : ${page}">
+  <tr th:each="employee : ${page.list}">
     <td th:text="${employee.empId}"></td>
     <td th:text="${employee.empName}"></td>
     <td th:text="${employee.age}"></td>

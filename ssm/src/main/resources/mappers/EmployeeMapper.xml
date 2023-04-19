@@ -5,6 +5,6 @@
 <mapper namespace="com.czh.ssm.mapper.EmployeeMapper">
 
     <select id="getAllEmployees" resultType="com.czh.ssm.pojo.Emp">
-        select * from ssm.t_emp;
+        select * from ssm.t_emp
     </select>
 </mapper>
